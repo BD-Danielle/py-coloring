@@ -1,13 +1,15 @@
 import os
-from withOpen import with_open_write, with_open_read
-from folder import createFolder
 
 # get the word saved
 
-def wordSaved(word, data):
-  if createFolder("words"):
-      if not (os.path.exists('{}.text'.format(word))):
-          with_open_write(word, 'text', 'w', data)
-          return True
-  else:
-      return False
+
+def word_saved(word):
+    cwd = os.getcwd()
+    dir = os.path.join(cwd, "words")
+    os.chdir(dir)
+    if not (os.path.exists('{}.json'.format(word))):
+        print('word unexistent')
+        return False
+    else:
+        print('word existed')
+        return True

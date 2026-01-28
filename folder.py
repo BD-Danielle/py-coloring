@@ -10,9 +10,9 @@ def chooseFolder():
 
 
 # create folder
-def createFolder(folderName):
+def createFolder(fldrName):
     cwd = os.getcwd()
-    dir = os.path.join(cwd, folderName)
+    dir = os.path.join(cwd, fldrName)
     print(dir)
     # virgin create
     if not (os.path.exists(dir)):
